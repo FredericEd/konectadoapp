@@ -75,6 +75,7 @@ public class ResultActivity extends Activity {
                     meMap.put("device_id", mDevice);
                     meMap.put("code2fa", partes[2]);
 
+                    Log.i("data", meMap.toString());
                     Log.i("URL", mURL);
                     JSONParser jParser = new JSONParser();
                     jsonOb = jParser.getJSONPOSTFromUrl(mURL, meMap);
@@ -94,9 +95,9 @@ public class ResultActivity extends Activity {
             checkTask = null;
             showProgress(false);
 
+            TextView textTitle = (TextView) findViewById(R.id.textTitle);
+            TextView textMessage = (TextView) findViewById(R.id.textMessage);
             try {
-                TextView textTitle = (TextView) findViewById(R.id.textTitle);
-                TextView textMessage = (TextView) findViewById(R.id.textMessage);
                 textMessage.setText(response.getString("msg"));
                 if (response.getInt("response_code") == 200) {
                             textTitle.setText(ResultActivity.this.getString(R.string.title_ok));
@@ -125,6 +126,15 @@ public class ResultActivity extends Activity {
                 }
             } catch (Exception e) {
                 Log.e(ResultActivity.this.getString(R.string.app_name), ResultActivity.this.getString(R.string.error_tag), e);
+
+                textMessage.setText("");
+                LinearLayout layProduct = (LinearLayout) findViewById(R.id.layProduct);
+                layProduct.setVisibility(View.GONE);
+                LinearLayout layProduct2 = (LinearLayout) findViewById(R.id.layProduct2);
+                layProduct2.setVisibility(View.GONE);
+                textTitle.setText(ResultActivity.this.getString(R.string.title_no));
+                ImageView imgSuperior = (ImageView) findViewById(R.id.imgSuperior);
+                imgSuperior.setImageResource(R.drawable.icono2);
             }
         }
 

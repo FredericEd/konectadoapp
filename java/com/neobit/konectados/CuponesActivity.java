@@ -86,6 +86,9 @@ public class CuponesActivity extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            } else {
+                TextView textEmpty = (TextView) findViewById(R.id.textEmpty);
+                textEmpty.setVisibility(View.VISIBLE);
             }
         }
 

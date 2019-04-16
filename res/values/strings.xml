@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Konectados</string>
+    <string name="app_name">Smart Tótem</string>
     <string name="error_tag">ERROR</string>
-    <string name="URL">http://34.73.113.72/records</string>
+    <string name="URL">http://34.73.113.72/api/v1/records</string>
     <string name="URL_cupones">http://34.73.113.72/api/v1/reports/</string>
-    <string name="device">5c9032d8bfaa6a3b42f96e31</string>
+    <string name="device">5ca38693bfaa6a345882a7f8</string>
     <string name="datos">Detalles de cupón</string>
     <string name="error_msg">El cupón ingresado no es válido.</string>
     <string name="empty">Aún no se han escaneado cupones el día de hoy.</string>
